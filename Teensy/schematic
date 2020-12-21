@@ -1,0 +1,23 @@
+Author: Jesper M
+
+Push Button:	Should control the Servo motor rotation speed.
+Servo Motor: 	Should rotate.
+Teensy35: 	Should read push button changes, update servo motor 
+		rotation speed and send the speed to the Raspberry pi
+		through CAN and SPI protocol.
+SPI/CAN:	Should convert the can signal to SPI, because
+		Raspberry PI don't have CANBUS interface.
+Raspberry PI:	Should be able to present the rotation speed through
+		the SPI connection.
+
+
+
+
+|---------------|
+|		|	|-----------|		|----------|
+| RASPBERRY PI 	|-------|  SPI/CAN  |-----------| Teensy35 |
+|		|       |-----------|		|----------|
+|---------------|				  |     |
+						  |     |
+						  |     |
+					<Push Button>   <Servo Motor>
